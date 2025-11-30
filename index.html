@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agro Uno — Fresh Vegetables, Fruits & Spices</title>
+  <style>
+    :root{--accent:#2f9e44;--dark:#0b1320;--muted:#6b7280;--card:#ffffff}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:#f7fafc;color:var(--dark)}
+    header{background:linear-gradient(90deg,#ffffff 0%, #f0fff4 100%);padding:28px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:8px;background:url('https://source.unsplash.com/collection/190727/64x64') center/cover}
+    h1{font-size:20px;margin:0}
+    .tag{color:var(--muted);font-size:13px}
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
+    .lang-toggle{background:transparent;border:1px solid #e6edf0;padding:6px 10px;border-radius:8px}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;padding:28px 20px;align-items:center}
+    .hero .intro{background:linear-gradient(180deg,#fff,#f8fffb);padding:22px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+    .hero p{color:var(--muted);line-height:1.6}
+
+    .contacts{background:#fff;padding:16px;border-radius:10px;border:1px solid #eef2f6}
+    .contacts a{display:block;color:var(--dark);text-decoration:none;margin-bottom:8px}
+
+    .products{padding:18px 20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+    .card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.04);display:flex;flex-direction:column}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 6px;font-size:15px}
+    .price{font-weight:700;color:var(--accent)}
+    .meta{font-size:13px;color:var(--muted)}
+
+    footer{padding:20px;background:#fff;border-top:1px solid #eef2f6;margin-top:18px}
+    .payments{display:flex;gap:12px;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.brand h1{font-size:18px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden></div>
+      <div>
+        <h1>Agro Uno</h1>
+        <div class="tag">Fresh vegetables • Fruits • Spices — Agro Uno</div>
+      </div>
+    </div>
+    <nav>
+      <a class="btn" href="#products">Buy Now</a>
+      <button class="lang-toggle" id="langBtn">العربية / EN</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="intro" id="intro">
+      <h2 id="title-en">Agro Uno — quality fresh produce from trusted farms</h2>
+      <h2 id="title-fr" style="display:none">Agro Uno — produits frais de qualité</h2>
+      <p id="desc-en">We supply premium vegetables, fruits and spices to retailers and restaurants. Competitive market prices, fast delivery across Algeria & Tunisia, and secure electronic & cryptocurrency payments.</p>
+      <p id="desc-fr" style="display:none">Nous fournissons des légumes, fruits et épices premium aux détaillants et restaurants. Prix compétitifs, livraison rapide et paiements électroniques & cryptos sécurisés.</p>
+
+      <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+        <a class="btn" href="mailto:mohamed121388@outlook.fr">Email: mohamed121388@outlook.fr</a>
+        <a class="btn" href="https://wa.me/213782700981" target="_blank">WhatsApp DZ</a>
+        <a class="btn" href="https://wa.me/21655012149" target="_blank">WhatsApp TN</a>
+      </div>
+
+      <div style="margin-top:14px;color:var(--muted)" class="small">
+        <strong>Note / Remarque:</strong> Prices shown are approximate market prices and updated regularly. See sources at page bottom.
+      </div>
+    </div>
+
+    <aside class="contacts">
+      <strong>Contacts / Contacts</strong>
+      <a href="tel:+213782700981">DZ: +213 78 270 0981</a>
+      <a href="tel:+21655012149">TN: +216 55 012 149</a>
+      <a href="mailto:mohamed121388@outlook.fr">mohamed121388@outlook.fr</a>
+
+      <div style="margin-top:12px">
+        <div class="small"><strong>Payments / Paiements</strong></div>
+        <div class="payments" style="margin-top:8px">
+          <img alt="Visa" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" width="64" height="20"/>
+          <img alt="Mastercard" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="64" height="20"/>
+          <img alt="PayPal" src="https://www.paypalobjects.com/webstatic/icon/pp258.png" width="64" height="20"/>
+          <img alt="Crypto" src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=024" width="64" height="20"/>
+        </div>
+        <div class="small" style="margin-top:8px">Accept: Card, PayPal, Bitcoin, USDT (for wholesale orders)</div>
+      </div>
+    </aside>
+  </section>
+
+  <main class="products" id="products">
+    <h2>Featured products — Produits phares</h2>
+    <div class="grid">
+
+      <!-- Tomato -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?tomato" alt="Tomato">
+        <h3>Tomatoes / Tomates</h3>
+        <div class="meta">Fresh, farm-picked — 1 kg</div>
+        <div class="price">DZD 100 / kg — TND 1.8 / kg</div>
+      </article>
+
+      <!-- Potatoes -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?potatoes" alt="Potatoes">
+        <h3>Potatoes / Pommes de terre</h3>
+        <div class="meta">Bulk & retail — 1 kg</div>
+        <div class="price">DZD 80 / kg — TND 1.4 / kg</div>
+      </article>
+
+      <!-- Onions -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?onion" alt="Onions">
+        <h3>Onions / Oignons</h3>
+        <div class="meta">Yellow onions — 1 kg</div>
+        <div class="price">DZD 120 / kg — TND 2.0 / kg</div>
+      </article>
+
+      <!-- Bell Pepper -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?bell-pepper" alt="Bell Pepper">
+        <h3>Bell Pepper / Poivron</h3>
+        <div class="meta">Green & red — 1 kg</div>
+        <div class="price">DZD 250 / kg — TND 4.5 / kg</div>
+      </article>
+
+      <!-- Dates -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?dates" alt="Dates">
+        <h3>Dates (Tunisia) / Dattes (Tunisie)</h3>
+        <div class="meta">Dried & fresh varieties — 1 kg</div>
+        <div class="price">TND 20–26 / kg (approx.)</div>
+      </article>
+
+      <!-- Cumin -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?cumin,spice" alt="Cumin">
+        <h3>Cumin / Cumin</h3>
+        <div class="meta">Whole seeds — 1 kg</div>
+        <div class="price">TND 16–19 / kg (approx.)</div>
+      </article>
+
+      <!-- Black Pepper -->
+      <article class="card">
+        <img src="https://source.unsplash.com/featured/?black-pepper,spice" alt="Black Pepper">
+        <h3>Black Pepper / Poivre noir</h3>
+        <div class="meta">Ground or whole — 1 kg</div>
+        <div class="price">USD 3.7–7.0 / kg (import prices vary)</div>
+      </article>
+
+    </div>
+
+    <div style="margin-top:18px;padding:14px;background:#fff;border-radius:10px;border:1px solid #eef2f6">
+      <strong>How to order / Comment commander</strong>
+      <ol>
+        <li>Contact us on WhatsApp (DZ or TN) or by email.</li>
+        <li>Confirm product, quantity and delivery address.</li>
+        <li>Choose payment: Card, PayPal or Crypto. For large wholesale orders we accept bank transfer and stablecoins (USDT).</li>
+      </ol>
+    </div>
+
+  </main>
+
+  <footer>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="small">© Agro Uno — Fresh produce. Email: mohamed121388@outlook.fr</div>
+      <div class="small">Estimated market price ranges shown (approx.). Sources: market price indexes & trade platforms.</div>
+    </div>
+
+    <div style="margin-top:10px;font-size:13px;color:var(--muted)">
+      Sources: SelinaWamucii price pages for tomatoes, potatoes, onions, pepper; Tridge/Dir/market indexes for dates & spices.
+    </div>
+  </footer>
+
+<script>
+  // simple bilingual toggle (EN <-> FR)
+  const btn=document.getElementById('langBtn');
+  let lang='en';
+  btn.addEventListener('click',()=>{
+    lang = (lang==='en')? 'fr' : 'en';
+    document.getElementById('title-en').style.display = (lang==='en')? '' : 'none';
+    document.getElementById('desc-en').style.display = (lang==='en')? '' : 'none';
+    document.getElementById('title-fr').style.display = (lang==='fr')? '' : 'none';
+    document.getElementById('desc-fr').style.display = (lang==='fr')? '' : 'none';
+    btn.textContent = (lang==='en')? 'FR / العربية' : 'EN / العربية';
+  });
+</script>
+</body>
+</html>
